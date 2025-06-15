@@ -31,7 +31,10 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={authUser ? <HomePage /> : <Navigate to="/login" />}
+        />
         <Route
           path="/signup"
           element={!authUser ? <SignupPage /> : <Navigate to="/" />}
