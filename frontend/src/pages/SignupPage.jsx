@@ -15,7 +15,7 @@ import AuthImagePattern from "../components/AuthImagePattern";
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const { signUp, isSigningUp } = useAuthStore();
+  const { signup, isSigningUp } = useAuthStore();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -38,7 +38,7 @@ export default function SignupPage() {
     e.preventDefault();
 
     if (validateForm() === true) {
-      signUp(formData);
+      signup(formData);
     }
   };
   return (
